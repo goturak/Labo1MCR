@@ -1,8 +1,7 @@
 import javax.swing.*;
 
 public class Frame extends JFrame {
-    private CirclePainter cpainter = new CirclePainter();
-    private SquarePainter spainter = new SquarePainter();
+    private Painter cpainter = new Painter();
     private int x, y;
 
     public Frame(int x, int y) {
@@ -12,20 +11,15 @@ public class Frame extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.add(cpainter);
-        this.add(spainter);
         cpainter.setVisible(true);
-        spainter.setVisible(true);
     }
 
     public void initList(Polygons[] circles, Polygons[] squares){
-        cpainter.setList(circles);
-        spainter.setList(squares);
+        cpainter.setList(circles, squares);
     }
 
     public void draw() {
         cpainter.repaint();
         cpainter.checkBound(x, y);
-        spainter.repaint();
-        spainter.checkBound(x, y);
     }
 }
