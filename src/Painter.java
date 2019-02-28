@@ -4,33 +4,24 @@ import java.awt.*;
  * Created by guillaume on 25/02/19.
  */
 public class Painter extends JPanel {
-    private Polygons[] circles;
-    private Polygons[] squares;
+    private Polygons[] shapes;
 
-    public void setList(Polygons[] circles, Polygons[] squares) {
-        this.circles = circles;
-        this.squares = squares;
+    public void setList(Polygons[] shapes) {
+        this.shapes = shapes;
     }
 
 
     @Override
     public void paintComponent(final Graphics graphics) {
         super.paintComponent(graphics);
-        for (Polygons circle : circles) {
-            graphics.setColor(Color.yellow);
-            graphics.fillOval((int) circle.getX(), (int) circle.getY(), (int) circle.getRadius() * 2, (int) circle.getRadius() * 2);
-            circle.move();
+        for (Polygons shape : shapes) {
+            shape.paintComponent(graphics);
         }
-        for (Polygons square : squares) {
-            graphics.setColor(Color.cyan);
-            graphics.fillRect((int) square.getX(), (int) square.getY(), (int) square.getRadius() * 2, (int) square.getRadius() * 2);
-            square.move();
-        }
+
     }
 
     public void checkBound(int x, int y) {
-        bound(x, y, circles);
-        bound(x, y, squares);
+        bound(x, y, shapes);
     }
 
     public void bound(int x, int y, Polygons[] ps) {

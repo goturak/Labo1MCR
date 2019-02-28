@@ -14,12 +14,12 @@ public class Frame extends JFrame {
         cpainter.setVisible(true);
     }
 
-    public void initList(Polygons[] circles, Polygons[] squares){
-        cpainter.setList(circles, squares);
+    public void initList(Polygons[] shapes){
+        cpainter.setList(shapes);
     }
 
     public void draw() {
         cpainter.repaint();
-        cpainter.checkBound(x, y);
+        cpainter.checkBound(this.getWidth(),this.getHeight());
     }
 }

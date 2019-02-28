@@ -1,9 +1,10 @@
+import java.awt.*;
 import java.util.Random;
 
 /**
  * Created by guillaume on 20/02/19.
  */
-public class Polygons {
+public abstract class Polygons {
     private double x;
     private double y;
     private Vector v;
@@ -42,4 +43,7 @@ public class Polygons {
         this.x += v.getX();
         this.y += v.getY();
     }
+
+    public abstract void paintComponent(final Graphics graphics);
+
 }

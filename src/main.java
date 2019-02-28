@@ -1,21 +1,23 @@
+import java.util.Random;
+
 /**
  * Created by guillaume on 20/02/19.
  */
 public class main {
     public static void main(String[] args){
         Frame frame = new Frame(500,500);
+        Random r = new Random();
 
-        Polygons[] circles = new Polygons[40];
-        for(int i = 0; i < 40; i++){
-           circles[i] = new Polygons(500,500);
+        Polygons[] shapes = new Polygons[20];
+        for(int i = 0; i < 20; i++){
+            if(r.nextInt(2) == 1){
+                shapes[i] = new Square(500,500);
+            } else {
+                shapes[i] = new Circle(500,500);
+            }
         }
 
-        Polygons[] squares = new Polygons[40];
-        for(int i = 0; i < 40; i++){
-            squares[i] = new Polygons(500,500);
-        }
-
-        frame.initList(circles, squares);
+        frame.initList(shapes);
 
         while(true){
             try {
