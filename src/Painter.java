@@ -21,11 +21,7 @@ public class Painter extends JPanel {
     }
 
     public void checkBound(int x, int y) {
-        bound(x, y, shapes);
-    }
-
-    public void bound(int x, int y, Polygons[] ps) {
-        for (Polygons poly : ps) {
+        for (Polygons poly : shapes) {
             if (poly.getX() < 0) {
                 poly.setX(0);
                 poly.getV().invertX();

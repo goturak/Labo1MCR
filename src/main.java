@@ -1,11 +1,9 @@
 import java.util.Random;
-
 /**
  * Created by guillaume on 20/02/19.
  */
 public class main {
     public static void main(String[] args){
-        Frame frame = new Frame(500,500);
         Random r = new Random();
 
         Polygons[] shapes = new Polygons[20];
@@ -16,8 +14,8 @@ public class main {
                 shapes[i] = new Circle(500,500);
             }
         }
-
-        frame.initList(shapes);
+        Frame frame;
+        frame.getInstance().initList(shapes);
 
         while(true){
             try {
