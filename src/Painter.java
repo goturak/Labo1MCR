@@ -5,11 +5,16 @@ import java.awt.*;
  */
 public class Painter extends JPanel {
     private Polygons[] shapes;
+    private int width, height;
 
     public void setList(Polygons[] shapes) {
         this.shapes = shapes;
     }
 
+    public Painter(int w, int h){
+        this.width = w;
+        this.height = h;
+    }
 
     @Override
     public void paintComponent(final Graphics graphics) {
@@ -18,6 +23,11 @@ public class Painter extends JPanel {
             shape.paintComponent(graphics);
         }
 
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(width,height);
     }
 
     public void checkBound(int x, int y) {

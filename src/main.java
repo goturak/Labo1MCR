@@ -15,7 +15,6 @@ public class main {
             }
         }
 
-        Frame frame = Frame.getInstance();
         Frame.getInstance().initList(shapes);
 
         while(true){
@@ -24,7 +23,7 @@ public class main {
             } catch(InterruptedException e){
                 e.printStackTrace();
             }
-            frame.draw();
+            Frame.getInstance().repaint();
         }
     }
 }

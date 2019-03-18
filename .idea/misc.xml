@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$USER_HOME$/IdeaProjects/250394-constraints" value="1479996865000" />
+        <entry key="$USER_HOME$/IdeaProjects/calculator" value="1465307346000" />
+        <entry key="$USER_HOME$/IdeaProjects/example" value="1457113070000" />
+        <entry key="$USER_HOME$/IdeaProjects/forcomp" value="1462313212000" />
+        <entry key="$USER_HOME$/IdeaProjects/funsets" value="1462312640000" />
+        <entry key="$USER_HOME$/IdeaProjects/hello-project" value="1474464270675" />
+        <entry key="$USER_HOME$/IdeaProjects/interpreter" value="1481124561000" />
+        <entry key="$USER_HOME$/IdeaProjects/objsets" value="1462315646000" />
+        <entry key="$USER_HOME$/IdeaProjects/patmat" value="1462372864000" />
+        <entry key="$USER_HOME$/IdeaProjects/quickcheck" value="1464284570000" />
+        <entry key="$USER_HOME$/IdeaProjects/recfun" value="1462365530000" />
+        <entry key="$USER_HOME$/IdeaProjects/streams" value="1464283452000" />
+        <entry key="$USER_HOME$/Para/project01" value="1512920780000" />
+        <entry key="$USER_HOME$/Para/project01/scalashop" value="1512920780000" />
+        <entry key="$USER_HOME$/Para/project02" value="1488358894000" />
+        <entry key="$USER_HOME$/Para/project03" value="1488359492000" />
+        <entry key="$USER_HOME$/Para/project04" value="1488359608000" />
+        <entry key="$USER_HOME$/Para/project04/barneshut" value="1488359608000" />
+        <entry key="$USER_HOME$/Para/project05" value="1489673544000" />
+        <entry key="$USER_HOME$/Para/project06" value="1489669944000" />
+        <entry key="$USER_HOME$/Para/project07" value="1489669944000" />
+        <entry key="$USER_HOME$/parcon2017-group39" value="1490273202000" />
+        <entry key="$USER_HOME$/parcon2017-group39/barneshut" value="1488359608000" />
+        <entry key="$USER_HOME$/parcon2017-group39/scalashop" value="1465232294000" />
+      </map>
+    </option>
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+</project>
