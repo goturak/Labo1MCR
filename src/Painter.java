@@ -3,7 +3,7 @@ import java.awt.*;
 /**
  * Created by guillaume on 25/02/19.
  */
-public class Painter extends JPanel {
+public class Painter extends JPanel implements Renderable {
     private Polygons[] shapes;
     private int width, height;
 
@@ -20,9 +20,12 @@ public class Painter extends JPanel {
     public void paintComponent(final Graphics graphics) {
         super.paintComponent(graphics);
         for (Polygons shape : shapes) {
-            shape.paintComponent(graphics);
+            display((Graphics2D)graphics, shape);
         }
+    }
 
+    public void display(Graphics2D g, Bouncable b){
+            b.draw();
     }
 
     @Override

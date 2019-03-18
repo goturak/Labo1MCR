@@ -4,13 +4,16 @@ import java.util.Random;
 /**
  * Created by guillaume on 20/02/19.
  */
-public abstract class Polygons {
+public abstract class Polygons implements Bouncable{
     private double x;
     private double y;
     private Vector v;
+    private Shape s;
+    private Color c;
     private double radius = 20;
+    private Painter painter;
 
-    Polygons(int x, int y){
+    Polygons(int x, int y, Shape s, Color c){
         Random r = new Random();
         this.x = r.nextDouble() * x;
         this.y = r.nextDouble() * y;
@@ -43,7 +46,14 @@ public abstract class Polygons {
         this.x += v.getX();
         this.y += v.getY();
     }
-
-    public abstract void paintComponent(final Graphics graphics);
+    public Renderable getRenderer(){
+        return this.painter;
+    }
+    public Color getColor(){
+        return this.c;
+    }
+    public Shape getShape(){
+        return this.s;
+    }
 
 }

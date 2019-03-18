@@ -5,7 +5,7 @@ import java.awt.*;
  */
 public class Square extends Polygons {
     Square(int x, int y){
-        super(x,y);
+        super(x,y, new Rectangle(), Color.MAGENTA);
     }
 
     public void paintComponent(final Graphics graphics) {

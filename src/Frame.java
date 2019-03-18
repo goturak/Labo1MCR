@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
 
 public class Frame extends JFrame implements Displayer {
     private static Frame instance;
@@ -14,6 +15,10 @@ public class Frame extends JFrame implements Displayer {
         this.add(cpainter);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
+    }
+
+    public void addKeyListener(KeyAdapter ka){
+
     }
 
     public static Frame getInstance() {
