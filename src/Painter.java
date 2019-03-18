@@ -1,13 +1,16 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.LinkedList;
+
 /**
  * Created by guillaume on 25/02/19.
  */
 public class Painter extends JPanel implements Renderable {
-    private Polygons[] shapes;
+    private LinkedList<Bouncable> shapes;
     private int width, height;
+    private Graphics2D g;
 
-    public void setList(Polygons[] shapes) {
+    public void setList(LinkedList<Bouncable> shapes) {
         this.shapes = shapes;
     }
 
@@ -19,13 +22,14 @@ public class Painter extends JPanel implements Renderable {
     @Override
     public void paintComponent(final Graphics graphics) {
         super.paintComponent(graphics);
-        for (Polygons shape : shapes) {
+        for (Bouncable shape : shapes) {
             display((Graphics2D)graphics, shape);
         }
     }
 
     public void display(Graphics2D g, Bouncable b){
-            b.draw();
+        this.g = g;
+        b.draw();
     }
 
     @Override
@@ -33,7 +37,11 @@ public class Painter extends JPanel implements Renderable {
         return new Dimension(width,height);
     }
 
-    public void checkBound(int x, int y) {
+    public Graphics2D getGraphics(){
+        return g;
+    }
+
+    /*public void checkBound(int x, int y) {
         for (Polygons poly : shapes) {
             if (poly.getX() < 0) {
                 poly.setX(0);
@@ -52,5 +60,5 @@ public class Painter extends JPanel implements Renderable {
                 poly.getV().invertY();
             }
         }
-    }
+    }*/
 }

@@ -6,7 +6,20 @@ public class BounceApp {
 
     // Autres attributs
     public BounceApp() {
-        /* ... */
+
+        Random r = new Random();
+        Painter p = new Painter(500, 500);
+        LinkedList<Bouncable> shapes = new LinkedList<>();
+        for (int i = 0; i < 20; i++) {
+            if (r.nextInt(2) == 1) {
+                shapes.add(new Square(500, 500, p));
+            } else {
+                shapes.add(new Circle(500, 500, p));
+            }
+        }
+        this.bouncers = shapes;
+        p.setList(bouncers);
+        Frame.getInstance().setPainter(p);
     }
 
     public void loop() {
@@ -21,22 +34,10 @@ public class BounceApp {
     }
 
     public static void main(String... args) {
-
-        Random r = new Random();
-
-        Polygons[] shapes = new Polygons[20];
-        for (int i = 0; i < 20; i++) {
-            if (r.nextInt(2) == 1) {
-                shapes[i] = new Square(500, 500);
-            } else {
-                shapes[i] = new Circle(500, 500);
-            }
-        }
-
-        Frame.getInstance().initList(shapes);
-
-
+        BounceApp b = new BounceApp();
+        b.loop();
 
 
     }
+
 }

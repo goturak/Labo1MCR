@@ -11,8 +11,6 @@ public class Frame extends JFrame implements Displayer {
         setSize(x, y);
         this.x = x;
         this.y = y;
-        cpainter = new Painter(x, y);
-        this.add(cpainter);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
@@ -28,14 +26,13 @@ public class Frame extends JFrame implements Displayer {
         return instance;
     }
 
-    public void initList(Polygons[] shapes){
-        cpainter.setList(shapes);
-    }
-
     public void repaint() {
-        cpainter.checkBound(this.getWidth(),this.getHeight());
         cpainter.repaint();
 
+    }
+    public void setPainter(Painter p){
+        cpainter = p;
+        this.add(cpainter);
     }
     public int getWidth(){
         return super.getWidth();
