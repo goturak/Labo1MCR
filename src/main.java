@@ -14,8 +14,9 @@ public class main {
                 shapes[i] = new Circle(500,500);
             }
         }
-        Frame frame;
-        frame.getInstance().initList(shapes);
+
+        Frame frame = Frame.getInstance();
+        Frame.getInstance().initList(shapes);
 
         while(true){
             try {

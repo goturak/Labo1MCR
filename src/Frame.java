@@ -29,22 +29,20 @@ public class Frame extends JFrame implements Displayer {
     }
 
     public void draw() {
-        cpainter.repaint();
         cpainter.checkBound(this.getWidth(),this.getHeight());
+        cpainter.repaint();
+
     }
     public int getWidth(){
-        return instance.getWidth();
+        return super.getWidth();
     }
     public int getHeight(){
-        return instance.getHeight();
+        return super.getHeight();
     }
     public Graphics2D getGraphics(){
         return graphics;
     }
-    public void repaint(){
-        cpainter.repaint();
-        cpainter.checkBound(instance.getWidth(), instance.getHeight());
-    }
+
     public void setTitle(String s){
         instance.setTitle(s);
     }
