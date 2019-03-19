@@ -11,6 +11,15 @@ public class Painter extends JPanel implements Renderable {
         this.shapes = shapes;
     }
 
+    public void add(Bouncable newShapes){
+        shapes.add(newShapes);
+    }
+    public void addList(LinkedList<Bouncable> newShapes){
+        shapes.addAll(newShapes);
+    }
+    public void clear(){
+        shapes.clear();
+    }
     public Painter(){
     }
 
