@@ -5,14 +5,13 @@ import java.awt.*;
  */
 public class Square extends Polygons {
 
-    Square(Painter p){
-        super(new Rectangle(10,10, 40, 40), Color.blue, p);
+    Square(Color c, Painter p){
+        super(new Rectangle(0,0,40,40), c, p);
     }
 
     public void draw(Graphics2D g) {
         move();
         g.setColor(getColor());
-        g.fill(getShape());
     }
     public void move(){
         super.move();
