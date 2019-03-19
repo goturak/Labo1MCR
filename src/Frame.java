@@ -40,6 +40,7 @@ public class Frame extends JFrame implements Displayer {
     public int getHeight(){
         return super.getHeight();
     }
+
     public Graphics2D getGraphics(){
         return (Graphics2D)super.getGraphics();
     }
