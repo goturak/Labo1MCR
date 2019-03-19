@@ -16,9 +16,9 @@ public class BounceApp {
         LinkedList<Bouncable> shapes = new LinkedList<>();
         for (int i = 0; i < 20; i++) {
             if (r.nextInt(2) == 1) {
-                shapes.add(new Square(500, 500, Frame.getInstance().getPainter()));
+                shapes.add(new Square(Frame.getInstance().getPainter()));
             } else {
-                shapes.add(new Circle(500, 500, Frame.getInstance().getPainter()));
+                shapes.add(new Circle(Frame.getInstance().getPainter()));
             }
         }
         this.bouncers = shapes;

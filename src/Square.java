@@ -5,8 +5,8 @@ import java.awt.*;
  */
 public class Square extends Polygons {
 
-    Square(int x, int y, Painter p){
-        super(x,y, new Rectangle(10,10, 40, 40), Color.blue, p);
+    Square(Painter p){
+        super(new Rectangle(10,10, 40, 40), Color.blue, p);
     }
 
     public void draw(Graphics2D g) {

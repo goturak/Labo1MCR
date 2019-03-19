@@ -6,8 +6,8 @@ import java.awt.geom.Ellipse2D;
  * Created by guillaume on 28/02/19.
  */
 public class Circle extends Polygons {
-    Circle(int x, int y, Painter p) {
-        super(x, y, new Ellipse2D.Double(), Color.orange, p);
+    Circle(Painter p) {
+        super(new Ellipse2D.Double(), Color.orange, p);
     }
 
     public void draw(Graphics2D g) {

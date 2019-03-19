@@ -13,11 +13,11 @@ public abstract class Polygons implements Bouncable{
     private Color c;
     private double radius = 20;
 
-    Polygons(int x, int y, Shape s, Color c, Painter p){
+    Polygons(Shape s, Color c, Painter p){
         painter = p;
         Random r = new Random();
-        this.x = r.nextDouble() * x;
-        this.y = r.nextDouble() * y;
+        this.x = r.nextDouble() * Frame.getInstance().getWidth();
+        this.y = r.nextDouble() * Frame.getInstance().getHeight();
         this.v = new Vector();
         this.s = s;
         this.c = c;
