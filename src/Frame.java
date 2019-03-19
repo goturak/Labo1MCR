@@ -4,15 +4,17 @@ import java.awt.event.KeyAdapter;
 
 public class Frame extends JFrame implements Displayer {
     private static Frame instance;
-    private Painter cpainter;
+    private Painter painter;
     private int x, y;
 
-    private Frame(int x, int y) {
+    private Frame(int x, int y, Painter p) {
         setSize(x, y);
+        this.painter = p;
         this.x = x;
         this.y = y;
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setVisible(true);
+        add(p);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(true);
     }
 
     public void addKeyListener(KeyAdapter ka){
@@ -21,19 +23,17 @@ public class Frame extends JFrame implements Displayer {
 
     public static Frame getInstance() {
         if (instance == null) {
-            instance = new Frame(500,500);
+            instance = new Frame(500,500, new Painter());
         }
         return instance;
     }
 
     public void repaint() {
-        cpainter.repaint();
+        painter.repaint();
+    }
 
-    }
-    public void setPainter(Painter p){
-        cpainter = p;
-        this.add(cpainter);
-    }
+    public Painter getPainter(){ return painter; }
+
     public int getWidth(){
         return super.getWidth();
     }
@@ -42,7 +42,7 @@ public class Frame extends JFrame implements Displayer {
     }
 
     public Graphics2D getGraphics(){
-        return (Graphics2D)super.getGraphics();
+        return (Graphics2D) super.getGraphics();
     }
 
     public void setTitle(String s){

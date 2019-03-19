@@ -23,6 +23,6 @@ public class Painter extends JPanel implements Renderable {
     }
 
     public void display(Graphics2D g, Bouncable b){
-        b.draw();
+        b.draw(g);
     }
 }

@@ -13,47 +13,33 @@ public class BounceApp {
     public BounceApp() {
 
         Random r = new Random();
-        Painter p = new Painter();
         LinkedList<Bouncable> shapes = new LinkedList<>();
         for (int i = 0; i < 20; i++) {
             if (r.nextInt(2) == 1) {
-                shapes.add(new Square(500, 500));
+                shapes.add(new Square(500, 500, Frame.getInstance().getPainter()));
             } else {
-                shapes.add(new Circle(500, 500));
+                shapes.add(new Circle(500, 500, Frame.getInstance().getPainter()));
             }
         }
         this.bouncers = shapes;
-        p.setList(bouncers);
-        Frame.getInstance().setPainter(p);
+        Frame.getInstance().getPainter().setList(bouncers);
+
     }
 
     public void loop() {
-
-
-
-        ActionListener task = new ActionListener() {
-
-            public void actionPerformed(ActionEvent e)
-            {
-               Frame.getInstance().repaint();
-            }
-        };
-        new Timer(17,task);
-        /*while (true) {
+        while (true) {
             try {
-                Thread.sleep(17);
+                Thread.sleep(7);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             Frame.getInstance().repaint();
-        }*/
+        }
     }
 
     public static void main(String... args) {
         BounceApp b = new BounceApp();
         b.loop();
-
-
     }
 
 }

@@ -5,6 +5,7 @@ import java.util.Random;
  * Created by guillaume on 20/02/19.
  */
 public abstract class Polygons implements Bouncable{
+    private Painter painter;
     private double x;
     private double y;
     private Vector v;
@@ -12,7 +13,8 @@ public abstract class Polygons implements Bouncable{
     private Color c;
     private double radius = 20;
 
-    Polygons(int x, int y, Shape s, Color c){
+    Polygons(int x, int y, Shape s, Color c, Painter p){
+        painter = p;
         Random r = new Random();
         this.x = r.nextDouble() * x;
         this.y = r.nextDouble() * y;
@@ -52,8 +54,9 @@ public abstract class Polygons implements Bouncable{
     }
 
     public Renderable getRenderer(){
-        return null;
+        return painter;
     }
+
     public Color getColor(){
         return this.c;
     }
