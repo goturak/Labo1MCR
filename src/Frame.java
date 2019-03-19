@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import static java.awt.event.KeyEvent.*;
+import static java.awt.event.KeyEvent.VK_Q;
 
 public class Frame extends JFrame implements Displayer {
     private static Frame instance;
@@ -15,6 +19,33 @@ public class Frame extends JFrame implements Displayer {
         add(p);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
+
+        KeyAdapter ka = new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent keyEvent) {
+                //int key = keyEvent.getKeyChar();
+                Frame.getInstance().dispose();
+                /*switch (key) {
+                    case VK_E:
+
+                        break;
+                    case VK_B:
+
+                        break;
+                    case VK_F:
+
+                        break;
+                    case VK_Q:
+                        instance.dispose();
+                        break;
+                    default:
+
+                }*/
+
+            }
+        };
+
+        addKeyListener(ka);
     }
 
     public void addKeyListener(KeyAdapter ka){
