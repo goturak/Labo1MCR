@@ -1,26 +1,33 @@
+package bounceable;
+
+import displayer.Frame;
+import renderable.Renderable;
+import renderable.Renderer;
+
 import java.awt.*;
 import java.util.Random;
 
 /**
- * Created by guillaume on 20/02/19.
+ * @Author Guillaume Vetter & Luca Reis de Carvalho
  */
-public abstract class Polygons implements Bouncable{
-    private Painter painter;
+public abstract class Polygons implements Bounceable {
+    private Renderer renderer;
     private double x;
     private double y;
     private Vector v;
     private Shape s;
     private Color c;
-    private double radius = 20;
+    private double radius;
 
-    Polygons(Shape s, Color c, Painter p){
-        painter = p;
+    Polygons(Shape s, Color c, int x, int y, int size, Renderer p){
+        renderer = p;
         Random r = new Random();
-        this.x = r.nextDouble() * Frame.getInstance().getWidth();
-        this.y = r.nextDouble() * Frame.getInstance().getHeight();
+        this.x = x;
+        this.y = y;
         this.v = new Vector();
         this.s = s;
         this.c = c;
+        this.radius = size;
     }
 
     public double getRadius(){ return radius;}
@@ -50,11 +57,11 @@ public abstract class Polygons implements Bouncable{
         double y = getY() + getV().getY();
         setY(y);
         setX(x);
-        checkBound(Frame.getInstance().getWidth(),Frame.getInstance().getHeight());
+        checkBound(Frame.getInstance().getWidth(), Frame.getInstance().getHeight());
     }
 
     public Renderable getRenderer(){
-        return painter;
+        return renderer;
     }
 
     public Color getColor(){

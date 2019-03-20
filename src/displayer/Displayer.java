@@ -1,6 +1,11 @@
+package displayer;
+
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 
+/**
+ * @Author Guillaume Vetter & Luca Reis de Carvalho
+ */
 public interface Displayer
 {
     int getWidth();

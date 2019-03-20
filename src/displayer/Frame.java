@@ -1,3 +1,7 @@
+package displayer;
+
+import renderable.Renderer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -5,18 +9,20 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import static java.awt.event.KeyEvent.*;
-import static java.awt.event.KeyEvent.VK_Q;
 
+/**
+ * @Author Guillaume Vetter & Luca Reis de Carvalho
+ */
 public class Frame extends JFrame implements Displayer, KeyListener {
     private static Frame instance;
-    private Painter painter;
+    private Renderer Renderer;
     private int x, y;
     private FilledShapeFactory ffs;
     private StrokeShapeFactory sfs;
 
-    private Frame(int x, int y, Painter p) {
+    private Frame(int x, int y, Renderer p) {
         setSize(x, y);
-        this.painter = p;
+        this.Renderer = p;
         this.x = x;
         this.y = y;
         ffs = new FilledShapeFactory();
@@ -31,17 +37,17 @@ public class Frame extends JFrame implements Displayer, KeyListener {
 
     public static Frame getInstance() {
         if (instance == null) {
-            instance = new Frame(500, 500, new Painter());
+            instance = new Frame(500, 500, new Renderer());
         }
         return instance;
     }
 
     public void repaint() {
-        painter.repaint();
+        Renderer.repaint();
     }
 
-    public Painter getPainter() {
-        return painter;
+    public Renderer getRenderer() {
+        return Renderer;
     }
 
     public int getWidth() {
@@ -69,27 +75,31 @@ public class Frame extends JFrame implements Displayer, KeyListener {
 
     }
 
+    /**
+     * @param e Event of the method.
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         switch (key) {
             case VK_B:
                 for (int i = 0; i < 10; i++) {
-                    getPainter().add(ffs.createSquare());
-                    getPainter().add(ffs.createCircle());
+                    getRenderer().add(ffs.createSquare());
+                    getRenderer().add(ffs.createCircle());
                 }
                 break;
             case VK_F:
                 for (int i = 0; i < 10; i++) {
-                    getPainter().add(sfs.createSquare());
-                    getPainter().add(sfs.createCircle());
+                    getRenderer().add(sfs.createSquare());
+                    getRenderer().add(sfs.createCircle());
                 }
                 break;
             case VK_E:
-                getPainter().clear();
+                getRenderer().clear();
                 break;
             case VK_Q:
                 this.dispose();
+                System.exit(0);
                 break;
         }
     }

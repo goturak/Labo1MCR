@@ -1,13 +1,17 @@
+package bounceable;
+
+import renderable.Renderer;
+
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 
 /**
- * Created by guillaume on 28/02/19.
+ * @Author Guillaume Vetter & Luca Reis de Carvalho
  */
-public class Circle extends Polygons {
-    Circle(Color c, Painter p) {
-        super(new Ellipse2D.Double(), c, p);
+public abstract class Circle extends Polygons {
+    Circle(Color c, int x, int y, int size, Renderer p) {
+        super(new Ellipse2D.Double(), c, x, y, size, p);
     }
 
     public void draw(Graphics2D g) {

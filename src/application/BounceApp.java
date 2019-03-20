@@ -1,20 +1,21 @@
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+package application;
+
+import bounceable.Bounceable;
+import displayer.Frame;
+
 import java.util.LinkedList;
-import java.util.Random;
 
-import static com.sun.java.accessibility.util.AWTEventMonitor.addKeyListener;
-import static java.awt.event.KeyEvent.*;
-
-
+/**
+ * @Author Guillaume Vetter & Luca Reis de Carvalho
+ */
 public class BounceApp {
-    private LinkedList<Bouncable> bouncers;
+    private LinkedList<Bounceable> bouncers;
 
     // Autres attributs
     public BounceApp() {
 
         this.bouncers = new LinkedList<>();
-        Frame.getInstance().getPainter().setList(bouncers);
+        Frame.getInstance().getRenderer().setList(bouncers);
 
     }
 
